@@ -130,6 +130,7 @@ class _MoviesTabState extends State<MoviesTab>
                 child: Image.network(
                   movie.posterUrl!,
                   fit: BoxFit.cover,
+                  webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
                   semanticLabel: 'Poster of ${movie.title}',
                   errorBuilder: (context, error, stack) =>
                       const Icon(Icons.movie),

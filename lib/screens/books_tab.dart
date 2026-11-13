@@ -118,9 +118,10 @@ class _BooksTabState extends State<BooksTab>
                 child: Image.network(
                   book.coverUrl!,
                   fit: BoxFit.cover,
+                  webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
                   semanticLabel: 'Cover of ${book.title}',
                   errorBuilder: (context, error, stack) =>
-                      const Icon(Icons.menu_book),
+                      const Icon(Icons.movie),
                 ),
               ),
       ),

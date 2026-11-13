@@ -78,13 +78,14 @@ class _PickDetailScreenState extends State<PickDetailScreen> {
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.network(
-                d.imageUrl!,
-                height: 280,
-                semanticLabel: 'Cover of ${d.title}',
-                errorBuilder: (context, error, stack) =>
-                    const SizedBox.shrink(),
-              ),
+                child: Image.network(
+                  d.imageUrl!,
+                  fit: BoxFit.cover,
+                  webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
+                  semanticLabel: 'Cover of ${d.title}',
+                  errorBuilder: (context, error, stack) =>
+                      const Icon(Icons.movie),
+                ),
             ),
           ),
         const SizedBox(height: 16),
